@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>success</title>
+</head>
+<body>
+    <h1>Shipping Costs</h1>
+    <p>Estimated Shipping for <%= params.shipmentType %> at a Weight of (<%= params.shippingWeight %>oz) <br>
+    will Cost of ($<%= params.shippingCost %>) </p>
+    <p>Item Weight:  <%= params.shippingWeight %>oz</p>
+    <p>Shipping Type: <%= params.shipmentType %></p>
+    <p>Shipping Cost: $<%= params.shippingCost %></p>
+</body>
+</html>

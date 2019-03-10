@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shipping Cost</title>
+</head>
+<body>
+    <h1>Shipping Rates</h1>
+
+    <form id="calculate_shipping" method="POST" action="/calcShipping">
+        <label for="shippingWeight">Select Weight  </label>
+        <br>
+        <input type="number" name="weight" min="0.5" step="0.5">OZ
+        <br>
+        <br>
+        <p>MAX Shipping Weight</p>
+        <p>Letters (Stamped) 3.5oz</p>
+        <p>Letters (Metered) 3.5oz</p>
+        <p>Large Envelopes (Flats) 13oz</p>
+        <p>First-Class Package 13oz</p>
+        <br>
+        <label for="shippingMethod">Select Shipping Method</label>
+        <br>
+        <select name="shipping">
+            <option name="LTR_Stamped" value="LTR_Stamped">Letters (Stamped)</option>
+            <option name="LTR_Metered" value="LTR_Metered">Letters (Metered)</option>
+            <option name="LRG_ENV_flats" value="LRG_ENV_flats">Large Envelopes (Flats)</option>
+            <option value="First-Class" value="First-Class">First-Class Package</option>
+          </select>
+          <br>
+          <br>
+        <input type="submit" value="submit" />    
+    </form>
+</body>
+</html>
