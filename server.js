@@ -2,12 +2,18 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const parserRaw = bodyParser.urlencoded({ extended: false });
-const port = process.env.PORT || 5000;
+
 
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 5000;
+}
+app.listen(port);
 
 app.get('/', (req,res) => {
     res.render('index');
@@ -17,11 +23,7 @@ app.post('/calcShipping', (req, res) => {
     calculateShipping(req, res);
 });
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 5000;
-}
-app.listen(port);
+
 
 function calculateShipping(req, res) {
     var shippingCost = 0;
